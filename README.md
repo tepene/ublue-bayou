@@ -1,4 +1,4 @@
-# Starting point
+# ublue-bayou
 
 [![build-ublue](https://github.com/tepene/ublue-bayou/actions/workflows/build.yml/badge.svg)](https://github.com/tepene/ublue-bayou/actions/workflows/build.yml)
 
