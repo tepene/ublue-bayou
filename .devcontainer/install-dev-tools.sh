@@ -21,7 +21,7 @@ sudo apk update && sudo apk upgrade
 echo ""
 echo -e "${YELLOW}Installing podman-remote${ENDCOLOR}"
 echo ""
-PODMAN_SOURCE=https://github.com/containers/podman/releases/download/v4.4.4/podman-remote-static-linux_amd64.tar.gz 
+PODMAN_SOURCE=https://github.com/containers/podman/releases/download/v4.4.4/podman-remote-static-linux_amd64.tar.gz
 PODMAN_TMP=/tmp/podman.tar.gz
 wget -O $PODMAN_TMP $PODMAN_SOURCE
 sudo tar -xf $PODMAN_TMP -C /tmp
