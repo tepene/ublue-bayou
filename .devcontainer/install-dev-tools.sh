@@ -17,6 +17,12 @@ echo -e "${YELLOW}Updating OS${ENDCOLOR}"
 echo ""
 sudo apk update && sudo apk upgrade
 
+## Install additional tools
+echo ""
+echo -e "${YELLOW}Installing additional tools${ENDCOLOR}"
+echo ""
+sudo apk add git-extras --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
+
 ## Install podman remote
 echo ""
 echo -e "${YELLOW}Installing podman-remote${ENDCOLOR}"
