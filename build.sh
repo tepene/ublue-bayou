@@ -20,3 +20,9 @@ flatpaks=$(yq '.flatpaks[]' < /tmp/ublue-recipe.yml)
 for pkg in $(echo -e "$flatpaks"); do \
     yq -i ".screens.applications.values.groups.Custom.packages += [{\"$pkg\": \"$pkg\"}]" /etc/yafti.yml
 done
+
+# install ubuntu nerd-fonts
+wget -O /tmp/Ubuntu_font.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Ubuntu.zip
+wget -O /tmp/UbuntuMono_font.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/UbuntuMono.zip
+unzip /tmp/Ubuntu_font.zip -d /usr/share/fonts/Ubuntu
+unzip /tmp/UbuntuMono_font.zip -d /usr/share/fonts/Ubuntu-Mono
