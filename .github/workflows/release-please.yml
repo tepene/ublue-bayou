@@ -24,5 +24,3 @@ jobs:
           prerelease: true
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
-          bootstrap-sha: 1a9a7fcea13d852cea082184b2c87ffca28e3dfe
-          last-release-sha: 1a9a7fcea13d852cea082184b2c87ffca28e3dfe
