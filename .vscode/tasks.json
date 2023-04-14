@@ -4,6 +4,22 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Git: Fetch upstream",
+      "type": "shell",
+      "command": "git fetch upstream",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Git: Merge from upstream",
+      "type": "shell",
+      "command": "git merge --no-ff --no-commit upstream/main",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
       "label": "Git: Delete merged branches",
       "type": "shell",
       "command": "git delete-merged-branches",
