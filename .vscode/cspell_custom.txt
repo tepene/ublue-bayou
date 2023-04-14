@@ -1,8 +1,13 @@
 devcontainer
 ENDCOLOR
+flatpak
+Flatpaks
 gitmessage
+langpacks
 ostree
+rpms
 Silverblue
 sisgstore's
 tepene
 ublue
+yafti
