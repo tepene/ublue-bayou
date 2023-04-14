@@ -21,7 +21,6 @@ jobs:
         with:
           release-type: simple
           package-name: release-please-action
-          release-as: 0.1.0
           prerelease: true
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
