@@ -1,0 +1,113 @@
+[org/gnome/shell] 
+enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com", "dash-to-dock@micxgx.gmail.com", "blur-my-shell@aunetx", "gsconnect@andyholmes.github.io"]
+favorite-apps=["org.gnome.Nautilus.desktop", "org.mozilla.Thunderbird.desktop", "org.mozilla.firefox.desktop"]
+
+[org/gnome/desktop/background]
+picture-options="stretched"
+picture-uri-dark="file:///usr/share/backgrounds/lagoon.jpg"
+picture-uri="file:///usr/share/backgrounds/lagoon.jpg"
+primary-color="000000"
+secondary-color="FFFFFF"
+
+[org/gnome/desktop/interface]
+clock-show-weekday=true
+cursor-theme="Yaru"
+document-font-name="Ubuntu NF 12"
+enable-hot-corners=false
+font-antialiasing="rgba"
+font-hinting="slight"
+font-name="Ubuntu NF 12"
+gtk-theme="Yaru"
+icon-theme="Yaru"
+monospace-font-name="UbuntuMono NFM 18"
+toolkit-accessibility=false
+
+[org/gnome/desktop/sound]
+allow-volume-above-100-percent=true
+theme-name="Yaru"
+
+[org/gnome/desktop/wm/preferences]
+button-layout=":minimize,maximize,close"
+num-workspaces="4"
+title-bar-font="Ubuntu NF Bold 12"
+
+[org/gnome/desktop/peripherals/touchpad]
+tap-to-click=true
+
+[org/gnome/shell/extensions/dash-to-dock]
+apply-custom-theme=true
+background-opacity=0.80000000000000004
+custom-theme-shrink=true
+dash-max-icon-size=36
+disable-overview-on-startup=true
+dock-fixed=false
+dock-position="LEFT"
+extend-height=true
+force-straight-corner=false
+intellihide-mode="FOCUS_APPLICATION_WINDOWS"
+preview-size-scale=0.0
+show-mounts-network=false
+show-trash=false
+transparency-mode="DYNAMIC"
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding="<Control><Alt>t"
+command="gnome-terminal"
+name="gnome-terminal"
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding="<Control><Alt>u"
+command="flatpak run com.raggesilver.BlackBox"
+name="blackbox"
+
+[org/gnome/software]
+allow-updates=false
+download-updates-notify=false
+download-updates=false
+first-run=false
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/", "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"]
+home=["<Super>e"]
+
+[com/raggesilver/BlackBox]
+command-as-login-shell=true
+custom-shell-command="distrobox enter ubuntu"
+font="UbuntuMono NFM 13"
+style-preference=2
+theme-dark="Yaru"
+use-custom-command=true
+window-height=650
+window-width=975
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer="list-view"
+migrated-gtk-settings=true
+search-filter-time-type="last_modified"
+show-create-link=true
+show-delete-permanently=true
+
+[org/gtk/settings/file-chooser]
+date-format="regular"
+location-mode="path-bar"
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sort-column="name"
+sort-directories-first=true
+sort-order="ascending"
+type-format="category"
+
+[org/gtk/gtk4/settings/file-chooser]
+sort-directories-first=true
+
+[org/gnome/terminal/legacy/profiles:/:e5320bdb-455e-427d-b273-7e09da1de84f]
+background-color='rgb(23,20,33)'
+cursor-background-color='rgb(11,87,164)'
+cursor-colors-set=true
+foreground-color='rgb(208,207,204)'
+palette=['rgb(23,20,33)', 'rgb(192,28,40)', 'rgb(38,162,105)', 'rgb(162,115,76)', 'rgb(18,72,139)', 'rgb(163,71,186)', 'rgb(42,161,179)', 'rgb(208,207,204)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,209,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)']
+title='Silverblue'
+title-mode='after'
+use-theme-colors=false
+visible-name='Silverblue'
