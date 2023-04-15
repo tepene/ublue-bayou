@@ -22,7 +22,22 @@ for pkg in $(echo -e "$flatpaks"); do \
 done
 
 # install ubuntu nerd-fonts
-wget -O /tmp/Ubuntu_font.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Ubuntu.zip
-wget -O /tmp/UbuntuMono_font.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/UbuntuMono.zip
-unzip /tmp/Ubuntu_font.zip -d /usr/share/fonts/ubuntu
-unzip /tmp/UbuntuMono_font.zip -d /usr/share/fonts/ubuntu-mono
+## set font URLs
+FONTS_NERD_BASE_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download"
+FONTS_UBUNTU_FILENAME="Ubuntu.zip"
+FONTS_UBUNTUMONO_FILENAME="UbuntuMono.zip"
+## set font directories
+FONTS_DIR="/usr/share/fonts"
+FONTS_UBUNTU_DIR="$FONTS_DIR/ubuntu"
+FONTS_UBUNTUMONO_DIR="$FONTS_DIR/ubuntu-mono"
+# download and extract fonts
+wget -O /tmp/$FONTS_UBUNTU_FILENAME $FONTS_NERD_BASE_URL/$FONTS_UBUNTU_FILENAME
+wget -O /tmp/$FONTS_UBUNTUMONO_FILENAME $FONTS_NERD_BASE_URL/$FONTS_UBUNTUMONO_FILENAME
+unzip /tmp/$FONTS_UBUNTU_FILENAME -d $FONTS_UBUNTU_DIR
+unzip /tmp/$FONTS_UBUNTUMONO_FILENAME -d $FONTS_UBUNTUMONO_DIR
+# replace spaces in font name with dash
+find $FONTS_UBUNTU_DIR -type f -name "* *" -exec sh -c 'mv "$1" "${1// /-}"' sh {} \;
+find $FONTS_UBUNTUMONO_DIR -type f -name "* *" -exec sh -c 'mv "$1" "${1// /-}"' sh {} \;
+# update font cache
+fc-cache -fv $FONTS_UBUNTU_DIR
+fc-cache -fv $FONTS_UBUNTUMONO_DIR
