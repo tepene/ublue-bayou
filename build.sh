@@ -24,5 +24,5 @@ done
 # install ubuntu nerd-fonts
 wget -O /tmp/Ubuntu_font.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Ubuntu.zip
 wget -O /tmp/UbuntuMono_font.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/UbuntuMono.zip
-unzip /tmp/Ubuntu_font.zip -d /usr/share/fonts/Ubuntu
-unzip /tmp/UbuntuMono_font.zip -d /usr/share/fonts/Ubuntu-Mono
+unzip /tmp/Ubuntu_font.zip -d /usr/share/fonts/ubuntu
+unzip /tmp/UbuntuMono_font.zip -d /usr/share/fonts/ubuntu-mono
