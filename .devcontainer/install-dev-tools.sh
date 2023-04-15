@@ -11,6 +11,14 @@ YELLOW="\e[33m"
 GREEN="\e[32m"
 ENDCOLOR="\e[0m"
 
+# Add DEV DNS entries from host system
+echo ""
+echo -e "${YELLOW}Adding DNS entries for dev.local${ENDCOLOR}"
+echo ""
+PODMAN_HOST=$(getent hosts host.containers.internal | awk '{ print $1 }')
+grep  -vE '^.*dev.*$' /etc/hosts | sudo tee /etc/hosts
+echo "$PODMAN_HOST registry.dev.local" | sudo tee -a /etc/hosts
+
 ## Update system
 echo ""
 echo -e "${YELLOW}Updating OS${ENDCOLOR}"
