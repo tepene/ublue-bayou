@@ -18,6 +18,8 @@ screens:
       description: |
         WARNING: This will modify your Flatpaks if you are rebasing! If you do not want to do this exit the installer.
       actions:
+        - run: /usr/lib/fedora-third-party/fedora-third-party-opt-out
+        - run: /usr/bin/fedora-third-party disable
         - run: flatpak remote-delete fedora --force
         - run: flatpak remove --system --noninteractive --all
         - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -29,7 +31,7 @@ screens:
       package_manager: yafti.plugin.flatpak
       groups:
         Core:
-          description: Core Applications
+          description: Core applications
           default: true
           packages:
             - Calculator: org.gnome.Calculator
@@ -42,28 +44,73 @@ screens:
             - Document Viewer: org.gnome.Evince
             - Extensions Manager: com.mattjakeman.ExtensionManager
             - Fedora Media Writer: org.fedoraproject.MediaWriter
+            - Firmware: org.gnome.Firmware
             - Flatseal Permissions Manager: com.github.tchx84.Flatseal
             - Font Downloader: org.gustavoperedo.FontDownloader
             - Font Viewer: org.gnome.font-viewer
-            - KeepassXC: org.keepassxc.KeePassXC
-            - LibreOffice: org.libreoffice.LibreOffice
             - Logs: org.gnome.Logs
-            - LogSeq: com.logseq.Logseq
             - Maps: org.gnome.Maps
-            - Mozilla Firefox: org.mozilla.firefox
             - Nautilus Preview: org.gnome.NautilusPreviewer
             - Picture Viewer: org.gnome.eog
+            - PowerStats: org.gnome.PowerStats
             - Text Editor: org.gnome.TextEditor
+        Recommendation:
+          description: |
+            Additional recommended applications.
+          default: true
+          packages:
+            - Celluloid: io.github.celluloid_player.Celluloid
+            - KeepassXC: org.keepassxc.KeePassXC
+            - LibreOffice: org.libreoffice.LibreOffice
+            - LogSeq: com.logseq.Logseq
+            - Mozilla Firefox: org.mozilla.firefox
+            - Nextcloud Client: com.nextcloud.desktopclient.nextcloud
+            - PDF Tricks: com.github.muriloventuroso.pdftricks
+            - Remmina: org.remmina.Remmina
+            - Spotify: com.spotify.Client
             - Thunderbird Email: org.mozilla.Thunderbird
-            - VSCode: com.visualstudio.code
         Web Browsers:
           description: Additional browsers to complement Firefox
           default: false
           packages:
             - Brave: com.brave.Browser
             - Google Chrome: com.google.Chrome
+            - LibreWolf: io.gitlab.librewolf-community
             - Microsoft Edge: com.microsoft.Edge
             - Opera: com.opera.Opera
+        Developer Tools:
+          description: Software development
+          default: false
+          packages:
+            - DBeaver Community: io.dbeaver.DBeaverCommunity
+            - Podman Desktop: io.podman_desktop.PodmanDesktop
+            - Postman: com.getpostman.Postman
+            - VSCode: com.visualstudio.code
+            - VSCodium: com.vscodium.codium
+            - Wireshark: org.wireshark.Wireshark
+        Communication:
+          description: Stay in touch with others
+          default: false
+          packages:
+            - Discord: com.discordapp.Discord
+            - Signal: org.signal.Signal
+            - Slack: com.slack.Slack
+            - Threema: ch.threema.threema-web-desktop
+        Office:
+          description: Writing and note taking
+          default: false
+          packages:
+            - Obsidian: md.obsidian.Obsidian
+            - OnlyOffice: org.onlyoffice.desktopeditors
+        Graphics / Photography:
+          description: Draw and edit pictures
+          default: false
+          packages:
+            - Color Picker: nl.hjdskes.gcolor3
+            - DisplayCal: net.displaycal.DisplayCAL
+            - Draw.io: com.jgraph.drawio.desktop
+            - Pinta: com.github.PintaProject.Pinta
+            - Shotwell: org.gnome.Shotwell
         Gaming:
           description: "Rock and Stone!"
           default: false
@@ -71,29 +118,20 @@ screens:
             - Bottles: com.usebottles.bottles
             - Discord: com.discordapp.Discord
             - Games: org.gnome.Games
+            - Gamescope for Steam: com.valvesoftware.Steam.Utility.gamescope
             - Heroic Games Launcher: com.heroicgameslauncher.hgl
             - MangoHUD: org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
-            - Steam: com.valvesoftware.Steam
-            - Gamescope for Steam: com.valvesoftware.Steam.Utility.gamescope
             - Proton Updater for Steam: net.davidotek.pupgui2
-        Office:
-          description: Bow to Capitalism
-          default: false
-          packages:
-            - Obsidian: md.obsidian.Obsidian
-            - OnlyOffice: org.onlyoffice.desktopeditors
-            - Slack: com.slack.Slack
-            - Standard Notes: org.standardnotes.standardnotes
+            - Steam: com.valvesoftware.Steam
         Streaming:
           description: Stream to the Internet
           default: false
           packages:
-            - OBS Studio: com.obsproject.Studio
-            - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture
+            - Boatswain for Streamdeck: com.feaneron.Boatswain
             - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
             - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
-            - Boatswain for Streamdeck: com.feaneron.Boatswain
-
+            - OBS Studio: com.obsproject.Studio
+            - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture
   final-screen:
     source: yafti.screen.title
     values:

@@ -1,6 +1,12 @@
-[org/gnome/shell] 
-enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com", "dash-to-dock@micxgx.gmail.com", "blur-my-shell@aunetx", "gsconnect@andyholmes.github.io"]
-favorite-apps=["org.gnome.Nautilus.desktop", "org.mozilla.Thunderbird.desktop", "org.mozilla.firefox.desktop"]
+[com/raggesilver/BlackBox]
+command-as-login-shell=true
+custom-shell-command="distrobox enter ubuntu"
+font="UbuntuMono NFM 13"
+style-preference=2
+theme-dark="Yaru"
+use-custom-command=true
+window-height=650
+window-width=975
 
 [org/gnome/desktop/background]
 picture-options="stretched"
@@ -22,6 +28,9 @@ icon-theme="Yaru"
 monospace-font-name="UbuntuMono NFM 18"
 toolkit-accessibility=false
 
+[org/gnome/desktop/peripherals/touchpad]
+tap-to-click=true
+
 [org/gnome/desktop/sound]
 allow-volume-above-100-percent=true
 theme-name="Yaru"
@@ -31,8 +40,30 @@ button-layout=":minimize,maximize,close"
 num-workspaces="4"
 title-bar-font="Ubuntu NF Bold 12"
 
-[org/gnome/desktop/peripherals/touchpad]
-tap-to-click=true
+[org/gnome/nautilus/preferences]
+default-folder-viewer="list-view"
+migrated-gtk-settings=true
+search-filter-time-type="last_modified"
+show-create-link=true
+show-delete-permanently=true
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/", "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"]
+home=["<Super>e"]
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding="<Control><Alt>t"
+command="gnome-terminal"
+name="gnome-terminal"
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding="<Control><Alt>u"
+command="flatpak run com.raggesilver.BlackBox"
+name="blackbox"
+
+[org/gnome/shell] 
+enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com", "dash-to-dock@micxgx.gmail.com", "blur-my-shell@aunetx", "gsconnect@andyholmes.github.io"]
+favorite-apps=["org.gnome.Nautilus.desktop", "org.mozilla.Thunderbird.desktop", "org.mozilla.firefox.desktop"]
 
 [org/gnome/shell/extensions/dash-to-dock]
 apply-custom-theme=true
@@ -50,56 +81,11 @@ show-mounts-network=false
 show-trash=false
 transparency-mode="DYNAMIC"
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding="<Control><Alt>t"
-command="gnome-terminal"
-name="gnome-terminal"
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding="<Control><Alt>u"
-command="flatpak run com.raggesilver.BlackBox"
-name="blackbox"
-
 [org/gnome/software]
 allow-updates=false
 download-updates-notify=false
 download-updates=false
 first-run=false
-
-[org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/", "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"]
-home=["<Super>e"]
-
-[com/raggesilver/BlackBox]
-command-as-login-shell=true
-custom-shell-command="distrobox enter ubuntu"
-font="UbuntuMono NFM 13"
-style-preference=2
-theme-dark="Yaru"
-use-custom-command=true
-window-height=650
-window-width=975
-
-[org/gnome/nautilus/preferences]
-default-folder-viewer="list-view"
-migrated-gtk-settings=true
-search-filter-time-type="last_modified"
-show-create-link=true
-show-delete-permanently=true
-
-[org/gtk/settings/file-chooser]
-date-format="regular"
-location-mode="path-bar"
-show-hidden=false
-show-size-column=true
-show-type-column=true
-sort-column="name"
-sort-directories-first=true
-sort-order="ascending"
-type-format="category"
-
-[org/gtk/gtk4/settings/file-chooser]
-sort-directories-first=true
 
 [org/gnome/terminal/legacy/profiles:/:e5320bdb-455e-427d-b273-7e09da1de84f]
 background-color='rgb(23,20,33)'
@@ -111,3 +97,17 @@ title='Silverblue'
 title-mode='after'
 use-theme-colors=false
 visible-name='Silverblue'
+
+[org/gtk/gtk4/settings/file-chooser]
+sort-directories-first=true
+
+[org/gtk/settings/file-chooser]
+date-format="regular"
+location-mode="path-bar"
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sort-column="name"
+sort-directories-first=true
+sort-order="ascending"
+type-format="category"
