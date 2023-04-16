@@ -22,7 +22,8 @@ and tools i need on a daily basis and maybe it will help others to build their o
 
 2. Rebase to `ublue-bayou`
 
-   The `latest` tag will automatically point to the latest build
+   The `latest` tag will automatically point to the latest build. That build will
+   always use the Fedora version specified in [recipe.yml](./recipe.yml)
 
    ```sh
    rpm-ostree rebase ostree-unverified-registry:ghcr.io/tepene/ublue-bayou:latest
@@ -40,10 +41,6 @@ and tools i need on a daily basis and maybe it will help others to build their o
    ```sh
    rpm-ostree rebase ostree-unverified-registry:ghcr.io/tepene/ublue-bayou:37
    ```
-
-The `latest` tag will automatically point to the latest build. That build will still
-always use the Fedora version specified in `release.yml`, so you won't get accidentally
-updated to the next major version.
 
 ## Features
 
