@@ -5,10 +5,9 @@ screens:
   first-screen:
     source: yafti.screen.title
     values:
-      title: "Welcome to uBlue-Bayou (Alpha)"
+      title: "Welcome to uBlue-Bayou (Beta)"
       icon: "/path/to/icon"
-      description: |
-        Pick some applications to get started
+      description: Pick some applications to get started
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
@@ -34,6 +33,7 @@ screens:
           description: Core applications
           default: true
           packages:
+            - Black Box: com.raggesilver.BlackBox
             - Calculator: org.gnome.Calculator
             - Calendar: org.gnome.Calendar
             - Characters: org.gnome.Characters
@@ -55,8 +55,7 @@ screens:
             - PowerStats: org.gnome.PowerStats
             - Text Editor: org.gnome.TextEditor
         Recommendation:
-          description: |
-            Additional recommended applications.
+          description: Additional recommended applications.
           default: true
           packages:
             - Celluloid: io.github.celluloid_player.Celluloid
